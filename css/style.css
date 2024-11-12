@@ -1,0 +1,348 @@
+@charset "UTF-8";
+/* グローバルスタイル */
+html {
+  scroll-behavior: smooth; /* ページ内リンクをスムーズスクロールを有効化 */
+}
+
+body {
+	font-family: 'Arial', sans-serif;
+  color: #383E45;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.sp{
+  display: none;
+}
+
+/* リセットCSSを使用しているので、デフォルトのスタイルをリセット */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* ヘッダースタイル */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  width: 1277px;
+}
+
+.header{
+  text-decoration: none;
+  color: white;
+  font-size: 26.5px;
+  font-weight: bold;
+  margin: 0;
+  color: white; 
+  background-color: #393E46; 
+  padding: 5px 18px;
+  border-radius: 2px;/* ほんの少し柔らかくする */
+}
+
+.header:hover{
+  color: #F5F5F5
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+nav li {
+  margin: 0 15px;
+  font-size: 17.28px;
+}
+
+/* メインビジュアルスタイル */
+.main-visual {
+  background-image: url('../img/main-visual.jpg'); /* ここにメインビジュアルの画像パス */
+  background-size: cover;
+  background-position: center;
+  height: 658px; 
+  height: 94vh;
+  position: relative; /* テキスト配置のための基準にする */
+  border-radius: 1px;/* ほんの少し柔らかくする */
+}
+
+.main-visual-text {
+  position: absolute; /* 画像の上に重ねる */
+  top: 62%; /* 縦の位置を中央に */
+  left: 50%; /* 横の位置を中央に */
+  transform: translate(-50%, -50%); /* 中央に揃えるための補正 */
+  color: white; 
+  font-size: 72px;
+  font-family: 'Italianno', cursive;  /* フォールバックフォントとしてcursiveを指定 */
+  text-align: center;
+
+ /* フォールバックとしてテキストの影を使ってアウトラインを表現 */
+ text-shadow: 
+   1px 1px 0 rgba(196, 108, 95, 0.3),
+   -1px 1px 0 rgba(196, 108, 95, 0.3),
+   1px -1px 0 rgba(196, 108, 95, 0.3),
+   -1px -1px 0 rgba(196, 108, 95, 0.3); 
+}
+
+/* 文字の点滅 */
+.main-visual-text {
+  animation: blink 5s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+nav a {
+  text-decoration: none;
+  color: #383E45;
+  font-weight: bold;
+  transition: border-bottom 0.3s; /* 下線のトランジションを滑らかにする */
+}
+
+nav a:hover, nav a:focus {
+  border-bottom: 2px solid #383E45; /* ホバー時の下線 */
+}
+
+
+
+/* コンテンツスタイル */
+.contents {
+  margin: 27.8px 78px;
+}
+
+.menu, .concep {
+  margin-bottom: 40px;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 54px;
+}
+
+h2 span {
+  font-size: 38.4px;
+  font-weight: bold;
+  display: inline-block;
+	position: relative;
+}
+
+h2 span::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 3px;
+    background-color: #383E45;
+    bottom: 8.3px;
+    left: 0.5px ;
+}
+
+article {
+  margin: 8px; 
+  display: flex;
+  flex-direction: column;
+}
+
+article h3 {
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+article img{
+  margin: 0 0 5px 0 ;
+  width: 405px;
+}
+
+article h4 {
+  font-size: 17.28px;
+  text-align: center;
+  font-weight: lighter;
+}
+
+/* メニューアイテムスタイル */
+.menu {
+	display: flex;
+	justify-content: center;
+}
+
+.menu article {
+  max-width: 415px;
+	width: 30%;
+}
+
+.menu article img {
+  border-radius: 7px; /* 丸くする*/
+}
+
+.menu p{
+  font-size: 12px;
+  padding: 0 5px;
+}
+
+
+/* concepセクションのスタイル */
+.concep {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.concep article {
+  display: flex;
+  flex-direction: row;
+  gap: 30px; 
+  padding-left: 21px;
+}
+
+.concep img {
+  border-radius: 50%; 
+  max-width: 100px;
+  max-height: 100px;
+  margin-top: 16px;
+}
+
+.concep h3 {
+	margin: 5px 0;
+  font-size: 19.2px;
+  text-align: left;
+}
+
+.concep h3 span {
+  font-weight: bold;
+  color: #000;
+  margin-right: 1rem;
+}
+
+.concep p {
+  font-size: 16px;
+  line-height: 1.45;
+  text-align: left;
+}
+
+
+
+/* インフォメーション */
+.information {
+  width: 1277px;
+  margin: 0 auto; /* セクション自体を中央揃え */
+  text-align: center;
+}
+  
+.iframe-box {
+	width: 100%;
+	height: 0;
+	padding-top: 56.25%;	/*地図の位置調整。ここが高さになります。*/
+	position: relative;
+	margin: 0 auto 2rem;	/*地図の下に空けるスペース。２文字分。*/
+}
+
+.iframe-box iframe {
+	position: absolute;
+	left: 0px;
+  right: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+  margin: 0 auto; /* 中央寄せのため */
+  border-radius: 7px; /* 丸くする*/
+}
+
+.information-text  {
+  text-align: left;
+}
+
+.information-text p {
+  margin-bottom: 5px;
+}
+
+.information-text span {
+  font-weight: bold;
+  color: #000;
+  margin-right: 1rem;
+}
+
+/* フッタースタイル */
+footer {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.7em;
+  background-color: rgba(88, 88, 88, 0.06); 
+}
+
+
+/* レスポンシブデザイン */
+@media (max-width: 1000px) {
+  .sp{
+    display: block;
+  }
+
+  .header-container{
+    width: 100%;
+  }
+
+  .main-visual {
+    height: 90hw;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+  }
+
+  .menu article {
+    width: 100%;
+    margin-bottom: 20px; /* 各メニューアイテムの間隔 */
+  }
+
+
+
+  /* Concepセクションのスタイル */
+  section {
+    text-align: center !important;
+    justify-content: center;
+  }
+
+  .concep article {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+   /* インフォメーションのスタイル */
+   .information {
+    width: 90%; /* 画面幅に合わせて調整 */
+    margin: 0 auto;
+  }
+
+  .iframe-box {
+    width: 100%;
+    padding-top: 75%; /* モバイルではより正方形に近い比率に */
+    margin: 0 auto 1.5rem; /* 中央寄せを維持 */
+  }
+
+
+}
