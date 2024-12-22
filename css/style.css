@@ -293,16 +293,21 @@ footer {
 }
 
 
-/* レスポンシブデザイン */
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝レスポンシブデザイン＝＝＝＝＝＝＝＝＝＝＝＝＝ */
 @media (max-width: 1000px) {
   .sp{
     display: block;
   }
 
+/* headerスタイル */
   .header-container{
-    width: 100%;
+    /* width: 100%; */
   }
 
+
+
+  /* メインビジュアル */
   .main-visual {
     height: 90hw;
   }
