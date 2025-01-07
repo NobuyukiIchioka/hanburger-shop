@@ -47,8 +47,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1277px;
+  max-width: 1277px;
+  width: 100%;
   padding: 9px 0;
+  margin: 0 15px;
   }
 
 h1 {
@@ -62,7 +64,7 @@ h1 {
   color: white;
   font-size: 26.5px;
   font-weight: bold;
-  margin: 0 0 0 15px;
+  /* margin: 0 0 0 15px; */
   color: white; 
   background-color: #393E46; 
   padding: 8.5px 27.5px;
@@ -70,20 +72,33 @@ h1 {
 }
 
 .h1:hover{
-  color: #F5F5F5
+  color: #F5F5F5;
+  /* color: #C46C5F; */
 }
 
 nav ul {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* リストを横並び、中央に */
+  gap: 30px; 
+  /* リスト間を30pxa空ける　*/
+  list-style: none;
+  margin: 0;
   padding: 0;
-}
-
-nav li {
-  margin: 0 15px;
   font-size: 17.28px;
 }
+
+nav a {
+  text-decoration: none;
+  color: #383E45;
+  font-weight: bold;
+  transition: border-bottom 0.3s; /* 下線のトランジションを滑らかにする */
+}
+
+nav a:hover, nav a:focus {
+  border-bottom: 2px solid #383E45; /* ホバー時の下線 */
+}
+
 
 /* メインビジュアルスタイル */
 
@@ -126,27 +141,17 @@ nav li {
   100% { opacity: 1; }
 }
 
-nav a {
-  text-decoration: none;
-  color: #383E45;
-  font-weight: bold;
-  transition: border-bottom 0.3s; /* 下線のトランジションを滑らかにする */
-}
-
-nav a:hover, nav a:focus {
-  border-bottom: 2px solid #383E45; /* ホバー時の下線 */
-}
-
 
 
 /* コンテンツスタイル */
 .contents {
-  margin: 27.8px 78px;
+  margin: 0 15px;
 }
 
-.menu, .concep {
-  margin-bottom: 40px;
+.section{
+  margin-bottom: 80px;
 }
+
 
 h2 {
   text-align: center;
@@ -195,6 +200,47 @@ article h4 {
   font-weight: lighter;
 }
 
+
+/* conceptセクションのスタイル */
+.concept {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.concept article {
+  display: flex;
+  flex-direction: row;
+  gap: 30px; 
+  padding-left: 21px;
+}
+
+.concept img {
+  border-radius: 50%; 
+  max-width: 100px;
+  max-height: 100px;
+  margin-top: 16px;
+}
+
+.concept h3 {
+	margin: 5px 0;
+  font-size: 19.2px;
+  text-align: left;
+}
+
+.concept h3 span {
+  font-weight: bold;
+  color: #000;
+  margin-right: 1rem;
+}
+
+.concept p {
+  font-size: 16px;
+  line-height: 1.45;
+  text-align: left;
+}
+
 /* メニューアイテムスタイル */
 .menu {
 	display: flex;
@@ -214,48 +260,6 @@ article h4 {
   font-size: 12px;
   padding: 0 5px;
 }
-
-
-/* concepセクションのスタイル */
-.concep {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-}
-
-.concep article {
-  display: flex;
-  flex-direction: row;
-  gap: 30px; 
-  padding-left: 21px;
-}
-
-.concep img {
-  border-radius: 50%; 
-  max-width: 100px;
-  max-height: 100px;
-  margin-top: 16px;
-}
-
-.concep h3 {
-	margin: 5px 0;
-  font-size: 19.2px;
-  text-align: left;
-}
-
-.concep h3 span {
-  font-weight: bold;
-  color: #000;
-  margin-right: 1rem;
-}
-
-.concep p {
-  font-size: 16px;
-  line-height: 1.45;
-  text-align: left;
-}
-
 
 
 /* インフォメーション */
@@ -316,12 +320,10 @@ footer {
 
 /* headerスタイル */
   header {
-    height: auto;
+    /* height: auto; */
+    background-color: rgba(254, 254, 254, 0.4);
   }
 
-  .header-container{
-    width: 100%;
-  }
 
   .h1{
     font-size: 20.5px;
@@ -332,26 +334,33 @@ footer {
     font-size: 16px;
   }
 
-
   /* メインビジュアル */
   .main-visual {
-    height: 90hw;
+    height: 101hw;
   }
 
+  /* メニュー */
   .menu {
+     /* 縦並びにします */
     display: flex;
     flex-direction: column;
     align-items: center;  
   }
-
+ 
   .menu article {
     width: 100%;
     margin-bottom: 20px; /* 各メニューアイテムの間隔 */
   }
 
+  
+/* コンテンツ全体 */
+.contents {
+  margin: 27.8px 15px;
+}
 
 
-  /* Concepセクションのスタイル */
+
+  /* conceptセクションのスタイル */
   section {
     text-align: center !important;
     justify-content: center;
